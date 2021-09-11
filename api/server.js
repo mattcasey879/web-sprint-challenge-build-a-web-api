@@ -1,6 +1,7 @@
 const express = require('express');
 const server = express();
 const projectsRtr = require("./projects/projects-router")
+const actionRtr = require("./actions/actions-router")
 const helment = require("helmet")
 const { logger } = require("./projects/projects-middleware")
 // Configure your server here
@@ -10,9 +11,14 @@ const { logger } = require("./projects/projects-middleware")
 server.use(helment())
 
 server.use("/api/projects", projectsRtr)
+server.use("/api/actions", actionRtr)
 
 server.get("/", (req, res) => {
     res.status(200).send("<h2>Welcome to the API!</h2>")
+})
+server.use((err, req, res, next) => {
+    console.log(err.message);
+    res.status(err.status || 500).json({ message: err.message})
 })
 
 module.exports = server;

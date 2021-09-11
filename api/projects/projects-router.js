@@ -30,8 +30,8 @@ router.post("/", validateProjectPost, (req, res, next) => {
 })
 
 router.put("/:id", validateProjectPost, validateProjectPost, (req, res, next) => {
-    project.update(req.body)
-    .then(project => res.status(200))
+    project.update(req.params.id,req.body)
+    .then(project => res.status(200).json(project))
     .catch(next)
 })
 
@@ -42,8 +42,5 @@ router.delete("/:id", validateProjectId, (req, res, next) => {
 })
 
 
-router.use((err, req, res, next) => {
-    console.log(err.message);
-    res.status(err.status || 500).json({ message: err.message})
-})
+
 module.exports = router;
