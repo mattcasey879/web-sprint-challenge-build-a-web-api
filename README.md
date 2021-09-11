@@ -147,7 +147,13 @@ We have provided test data for all the resources.
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. The core features of Node.js and Express and why they are useful.
+    Node.js and is very versitile to able to be used in the terminal or in third party apps like postman. Express is excellent for the use of middlewares and organizing our code using routes and pretty much goes hand in hand with node.js 
 1. Understand and explain the use of Middleware.
+    Middlewares are blocks of code that are ran in certain order as the dev writes them, We can use them to run certain code before other parts of code like validation before a HTTP request
 1. The basic principles of the REST architectural style.
+    REST has constraints that most devs look at as standards so everyone can use that architecure everywhere. It has the Client-Server constraint which basically means the client side and the server side must be able to run and evolve seperately without the need to depend on each other. 
+    Another Constraint is Stateless which basically means that nothing is stored which will make the application faster. No http request remembers the one that went before it. 
 1. Understand and explain the use of Express Routers.
+    Express routers are functions that create router objects and use them in HTTP request for certain routes. We can use express router to hit certain endpoints to do certain requests
+
 1. Describe tooling used to manually test the correctness of an API.
