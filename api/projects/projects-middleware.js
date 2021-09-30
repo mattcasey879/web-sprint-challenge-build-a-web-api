@@ -27,8 +27,8 @@ const validateProjectId = (req, res, next) => {
 
 const validateProjectPost = (req, res, next) => {
     console.log("validating Post")
-    const { name, description } = req.body
-    if(!name || !description) {
+    const { name, description,completed } = req.body
+    if(!name || !description || completed === undefined) {
         next({ status: 400, message: "Please fill out all required fields"})
     } else {
         next()
